@@ -72,72 +72,17 @@ class AnagramHelper:
     def restart(self):
         self.guess = self.letters.copy()
         self.words = []
-ana = AnagramHelper('angus goodner')
-def try1():
-    ana.include_word('dungeon')
-    return ana.show_cons_vow_blurb()
-
-def try2():
-    ana.include_word('gang')
-    ana.show_cons_vow_blurb()
-    ana.include_word('sound')
-    ana.show_cons_vow_blurb()
-
-def try_all(*lst):
-    # Ensures that words are a true anagram
-    ana.restart()
-    for word in lst:
-        ana.include_word(word)
-    ans = ana.show_cons_vow_blurb()
-    ana.restart()
-    if len(ans) == 0:
-        print(f'Complete Anagram: {" ".join(lst)}')
-        return ''
-    else:
-        return ans
+    def try_all(self, *lst):
+        # Ensures that words are a true anagram
+        self.restart()
+        for word in lst:
+            self.include_word(word)
+        ans = self.show_cons_vow_blurb()
+        self.restart()
+        if len(ans) == 0:
+            print(f'Complete Anagram: {" ".join(lst)}')
+            return ''
+        else:
+            return ans
     
 
-def try_one_only(word):
-    ana.include_word(word)
-    ans = ana.show_cons_vow_blurb()
-    ana.restart()
-    return ans
-
-res = try1()
-ana.restart()
-res = try2()
-ana.restart()
-
-res = try_all('gong', 'sound', 'era')
-res = try_all('sag', 'or', 'dungeon')
-res = try_all('nerd', 'goon', 'suga')
-res = try_one_only('nerd')
-
-res = try_one_only('sugar')
-
-res = try_one_only('gauge')
-
-res = try_all('dr', 'nono', 'gauges')
-res = try_all('dr', 'no', 'gauge', 'son')
-
-res = try_all('dr')
-print(res)
-
-res = try_all('dr', 'song')
-print(res)
-
-
-res = try_all('gonad')
-print(res)
-res = try_all('surge', 'on', 'gonad')
-
-res = try_all('surge')
-print(res)
-
-res = try_all('no', 'gags', 'no', 'rude')
-
-
-res = try_all('Dragon', 'Us', 'Gone')
-res = try_all('sun', 'dragon', 'ego')
-res = try_all('one', 'dragon', 'gus')
-res = try_all('dragonugones')
