@@ -89,12 +89,19 @@ def try_all(*lst):
     for word in lst:
         ana.include_word(word)
     ans = ana.show_cons_vow_blurb()
-    assert len(ans) == 0, f'Not valid combo {ans}'
     ana.restart()
+    if len(ans) == 0:
+        print(f'Complete Anagram: {" ".join(lst)}')
+        return ''
+    else:
+        return ans
+    
 
-def try_one(word):
+def try_one_only(word):
     ana.include_word(word)
-    return ana.show_cons_vow_blurb()
+    ans = ana.show_cons_vow_blurb()
+    ana.restart()
+    return ans
 
 res = try1()
 ana.restart()
@@ -103,5 +110,34 @@ ana.restart()
 
 res = try_all('gong', 'sound', 'era')
 res = try_all('sag', 'or', 'dungeon')
-res = try_one('dungeon')
+res = try_all('nerd', 'goon', 'suga')
+res = try_one_only('nerd')
+
+res = try_one_only('sugar')
+
+res = try_one_only('gauge')
+
+res = try_all('dr', 'nono', 'gauges')
+res = try_all('dr', 'no', 'gauge', 'son')
+
+res = try_all('dr')
 print(res)
+
+res = try_all('dr', 'song')
+print(res)
+
+
+res = try_all('gonad')
+print(res)
+res = try_all('surge', 'on', 'gonad')
+
+res = try_all('surge')
+print(res)
+
+res = try_all('no', 'gags', 'no', 'rude')
+
+
+res = try_all('Dragon', 'Us', 'Gone')
+res = try_all('sun', 'dragon', 'ego')
+res = try_all('one', 'dragon', 'gus')
+res = try_all('dragonugones')
