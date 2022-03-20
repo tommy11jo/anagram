@@ -8,9 +8,6 @@ res = ana.try_all('nerd', 'goon', 'suga')
 res = ana.try_all('dr', 'nono', 'gauges')
 res = ana.try_all('dr', 'no', 'gauge', 'son')
 
-res = ana.try_all('gonad')
-res = ana.try_all('surge', 'on', 'gonad')
-
 res = ana.try_all('surge')
 
 res = ana.try_all('no', 'gags', 'no', 'rude')

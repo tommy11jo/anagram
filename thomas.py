@@ -3,12 +3,6 @@ ana = AnagramHelper('Thomas Orlando')
 res = ana.show_cons_vow_blurb()
 print(res)
 
-res = ana.try_all('doom')
-print(res)
-
-res = ana.try_all('hot', 'doom')
-print(res)
-
 res = ana.try_all('hot', 'doom', 'snarl')
 print(res)
 
@@ -20,23 +14,6 @@ res = ana.try_all('oh', 'snarl', 'at', 'doom')
 print(res)
 
 res = ana.try_all('snort', 'mold')
-print(res)
-
-print(ana.show_freqs())
-
-res = ana.try_all('hand')
-print(res)
-
-res = ana.try_all('smart')
-print(res)
-
-res = ana.try_all('smart', 'loo')
-print(res)
-
-res = ana.try_all('loo', 'hand')
-print(res)
-
-res = ana.try_all('loo')
 print(res)
 
 res = ana.try_all('loo', 'and', 'or', 'maths')
@@ -97,5 +74,11 @@ print(res)
 res = ana.try_all('oath', 'mood', 'snarl')
 print(res)
 
-# hippocratic oath
-# moodsnarl oath
+res = ana.try_all('loo', 'mad', 'snort', 'ha')
+print(res)
+
+res = ana.try_all('snort', 'da', 'moolah')
+print(res)
+
+res = ana.try_all('sad', 'moon') 
+print(res)

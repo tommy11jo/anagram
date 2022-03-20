@@ -26,16 +26,19 @@ class AnagramHelper:
         return letters
 
     def show_freqs(self):
-        # show remaining frequency
+        """ show remaining frequencies """
         return self.guess
     
     def show_orig_freqs(self):
+        """ show original frequencies """
         return self.letters
     
     def show_blurb(self):
+        """ show all letters in a string """
         return "".join([let * freq for let, freq in self.guess.items()])
     
     def show_cons_vow_blurb(self):
+        """ show all letters in a string, vowels first then consonants """
         v, c = [], []
         for let, freq in self.guess.items():
             if let in AnagramHelper.vowels:
@@ -45,7 +48,7 @@ class AnagramHelper:
         return "".join(v + c)
     
     def include_word(self, word):
-        # Guess a word and include it; returns True if possible and False if not
+        """ Guess a word and include it; returns True if possible and False otehrwise """
         lower_word = word.lower()
         word_dict = AnagramHelper.string_to_dict(lower_word)
         for let in word_dict:
@@ -58,7 +61,7 @@ class AnagramHelper:
         return True
 
     def pop_word(self):
-        # Remove the last word you guessed 
+        """ Remove the last word you guessed  """
         if len(self.words) == 0:
             return
         word = self.words.pop()
@@ -67,13 +70,15 @@ class AnagramHelper:
 
 
     def show_words(self):
+        """ Show words you guessed so far """
         " ".join(self.words)
 
     def restart(self):
         self.guess = self.letters.copy()
         self.words = []
+
     def try_all(self, *lst):
-        # Ensures that words are a true anagram
+        """ Guess a list of words and print if they form an anagram """ 
         self.restart()
         for word in lst:
             self.include_word(word)
@@ -85,4 +90,3 @@ class AnagramHelper:
         else:
             return ans
     
-
